@@ -1,5 +1,6 @@
-# Three.js Starter
-Courtesy of Bruno Simon of https://threejs-journey.xyz/
+--Advancing the existing website with threejs elements
+#owner: Henrycious
+
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
