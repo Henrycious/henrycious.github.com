@@ -9,14 +9,15 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = merge(common, { 
     mode: "production",
     output: {
-        filename: "[name].[contenthash].bundle.js",
+        filename: "js/[name].js",
         path: path.resolve(__dirname,"./dist/"),
         publicPath: '',
-        assetModuleFilename: '[path][name].[hash][ext][query]'
+        //assetModuleFilename: '[path][name].[hash][ext][query]'
     },
     plugins: [  
         new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}), 
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        ...getHtmlTemplate()
         // new CopyPlugin({
         //     patterns: [
         //         { from: 'src/assets' }
