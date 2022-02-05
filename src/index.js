@@ -3,8 +3,21 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import './css/main.css'
 import './index.html'
-import './js/index.js'
-import './js/fontawesome.js'
+import './js/lib/fontawesome.js'
+import mmap from '../src/assets/images/NormalMap.png'
+//import Pictures
+const navToggle = document.querySelector('.nav-toggle')
+const navLinks = document.querySelectorAll('.nav__link') // Create list with all the nav_link elements
+
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open')
+})
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open')
+    })
+})
 
 /* Start with:
 
@@ -12,9 +25,11 @@ import './js/fontawesome.js'
 */
 //Import // Loading
 const textureLoader = new THREE.TextureLoader()
+const normalTexture = textureLoader.load(mmap)
+// 'http://localhost:8000/src/assets/static/textures/NormalMap.png'
 
-const normalTexture = textureLoader.load('/textures/NormalMap.png')
-// Debug
+alert(mmap)
+// Debug'
 const gui = new dat.GUI()
 
 // Canvas
@@ -28,10 +43,11 @@ const scene = new THREE.Scene()
 -> Spawn in the Scene */ 
 // Objects
 const SphereGeometry = new THREE.SphereGeometry( .5, 64,64 );
-
 // Materials
 
-const material = new THREE.MeshStandardMaterial()
+
+
+const material = new THREE.MeshStandardMaterial();
 material.metalness = 0.7
 material.roughness = 0.2
 material.normalMap = normalTexture;
@@ -47,7 +63,7 @@ scene.add(sphere)
 /*******/
 
 
-/********** */
+// /********** */
 // const light2 = gui.addFolder('Light 2')
 
 // light2.add(pointLight2.position, 'x').min(-3).max(3).step(0.01)

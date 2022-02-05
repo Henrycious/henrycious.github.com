@@ -12,7 +12,7 @@
     --ff-secondary: monospace;
     --fw-reg: 300;
     --fw-bold: 900;
-    --clr-light: #000000;
+    --clr-light: #5f5a5a;
     --clr-dark: #303030;
     --clr-accent: rgb(222, 140, 0);
     --fs-h1: 3rem;
@@ -312,7 +312,7 @@ header {
 
 .my-services {
     background-color: var(--clr-dark);
-    background-image: url(src/assets/images/macbook..jpg);
+    background-image: url(src/assets/images/macbook.98aa760efcbe8cf32aae.jpg);
     background-size: cover;
     background-blend-mode: multiply;
     /* Blend the background with the background color*/
@@ -512,5 +512,3 @@ header {
     place-items: center;
 }
 
-
-/*# sourceMappingURL=main.css.map*/
